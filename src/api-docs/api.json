@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "c951a3e0-d602-4933-83a6-4bb0251e724f",
+		"name": "⚽️ Mock Premier League App",
+		"description": "# ⚽️ Mock Premier League App API Documentations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17613461"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Joe\",\n    \"email\": \"jil@bafuto.com\",\n    \"password\" : \"12345\",\n    \"role\" : \"user\",\n    \"displayName\" : \"PL Analyst\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "Create a new User \\[Admin/Basic\\]"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jil@bafuto.com\",\n    \"password\" : \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login to User \\[Basic/Admin\\] Account"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for Authentication Activitites: Login/Signup"
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Create Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teamName\" :\"Rajil FC\",\n    \"teamCode\" : \"RJC\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/teamS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"teamS"
+							]
+						},
+						"description": "Create a Team"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Teams",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"teams"
+							]
+						},
+						"description": "See all Created Teams"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/teams/CHP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"teams",
+								"CHP"
+							]
+						},
+						"description": "See information about a team"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teamName\" : \"Pulter FC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/teams/CHE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"teams",
+								"CHE"
+							]
+						},
+						"description": "Create a Team"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/teams/CHE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"teams",
+								"CHE"
+							]
+						},
+						"description": "Delete a Team"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint For CRUD Teams"
+		},
+		{
+			"name": "Fixtures",
+			"item": [
+				{
+					"name": "Create Fixture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"homeTeam\": \"RFC\",\n    \"awayTeam\": \"CHF\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures"
+							]
+						},
+						"description": "Create A Fixture"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Fixtures",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA5NGMyNDQ2YmMwYTRlMWI4MDNhNiIsImlhdCI6MTcxMTQ2Njg0NywiZXhwIjoxNzEyMDcxNjQ3fQ.dRYuGcUKVmflDPx0_XiXvFR-AsmpzB7t_FCyjErnguU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures"
+							]
+						},
+						"description": "See all Fixtures"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fixture",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures/CHFCBF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures",
+								"CHFCBF"
+							]
+						},
+						"description": "Get Information about a fixture"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fixture Link",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures/link/CHFCBF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures",
+								"link",
+								"CHFCBF"
+							]
+						},
+						"description": "Generate Unique link for a fixture"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Fixture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"homeScore\" : 9,\n    \"awayScore\" : 5,\n    \"matchStatus\" : \"completed\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures/CHFCBF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures",
+								"CHFCBF"
+							]
+						},
+						"description": "Update Details of A Fixture"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Fixture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/fixtures/CBFCHF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"fixtures",
+								"CBFCHF"
+							]
+						},
+						"description": "Delete a Fixture"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint for CRUD Fixtures"
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search Teams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/pl/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pl",
+								"teams"
+							]
+						},
+						"description": "See all Teams"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Pending Fixtures",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/pl/fixtures/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pl",
+								"fixtures",
+								"pending"
+							]
+						},
+						"description": "See All pending Fixtures"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Completed Fixtures",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDJhMTdkYzU0NTdhNzAwM2NmOGFkMSIsImlhdCI6MTcxMTQ0ODQ5MSwiZXhwIjoxNzEyMDUzMjkxfQ.JHKBWxvd_FRxHh9XLDI0gBJeplLUB_A4wuLJfCnE8oo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/pl/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pl",
+								"teams"
+							]
+						},
+						"description": "See All Completed Fixtures"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Single Team and Fixtures",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/pl/search/CHF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pl",
+								"search",
+								"CHF"
+							]
+						},
+						"description": "Get Info About a single Team"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Multiple Teams and Fixtures",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/pl/search?team1=CBF&team2=RFC&team3=CHF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pl",
+								"search"
+							],
+							"query": [
+								{
+									"key": "team1",
+									"value": "CBF"
+								},
+								{
+									"key": "team2",
+									"value": "RFC"
+								},
+								{
+									"key": "team3",
+									"value": "CHF"
+								}
+							]
+						},
+						"description": "Get Info about Multiple Teams , H2H Matches and Fixtures"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoint To Search For Teams, Pending/Completed Fixtures and Teams+Fixtures"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
