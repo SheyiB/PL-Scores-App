@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { SearchService } from './search.services'
 import { handleError } from '@/common/utils/error';
 
+//Cache All Data from this Controller
+
 export class SearchController {
     async searchTeam(req: Request, res: Response) {
         try {
